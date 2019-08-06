@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
         txtSenha = (EditText) findViewById(R.id.txtSenha);
         btnEntrar = (Button) findViewById(R.id.btnEntrar);
         btnSair = (Button) findViewById(R.id.btnSair);
+        txtUsuario.requestFocus();
 
         btnEntrar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -34,12 +35,14 @@ public class MainActivity extends AppCompatActivity {
 
                 if (usuario.equals("senac") && senha.equals("senac")) {
                     startActivity(new Intent(getApplicationContext(), RespondeUsuario_Activity.class));
-
+                    finish();
                     //Intent intent = new Intent(getApplicationContext(), RespondeUsuario_Activity.class);
                     //startActivity(intent);
-                }
-                else {
+                } else {
                     Toast.makeText(getApplicationContext(), "Usuário ou senha inválida", Toast.LENGTH_SHORT).show();
+                    txtUsuario.setText("");
+                    txtSenha.setText("");
+                    txtUsuario.requestFocus();
                 }
             }
         });
