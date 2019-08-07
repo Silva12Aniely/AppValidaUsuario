@@ -14,6 +14,8 @@ public class MainActivity extends AppCompatActivity {
     EditText txtUsuario, txtSenha;
     Button btnEntrar, btnSair;
 
+    public static final String EXTRA_MESSAGE = "br.sp.senac.appvalidausuario.MESSAGE";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,10 +36,15 @@ public class MainActivity extends AppCompatActivity {
                 senha = txtSenha.getText().toString();
 
                 if (usuario.equals("senac") && senha.equals("senac")) {
-                    startActivity(new Intent(getApplicationContext(), RespondeUsuario_Activity.class));
+//                    startActivity(new Intent(getApplicationContext(), RespondeUsuario_Activity.class));
+
+                    Intent intent = new Intent(getApplicationContext(), RespondeUsuario_Activity.class);
+
+                    String message = txtUsuario.getText().toString();
+                    intent.putExtra(EXTRA_MESSAGE, message);
+
+                    startActivity(intent);
                     finish();
-                    //Intent intent = new Intent(getApplicationContext(), RespondeUsuario_Activity.class);
-                    //startActivity(intent);
                 } else {
                     Toast.makeText(getApplicationContext(), "Usuário ou senha inválida", Toast.LENGTH_SHORT).show();
                     txtUsuario.setText("");
