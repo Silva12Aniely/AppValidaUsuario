@@ -3,7 +3,8 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
-    <color name="corPrimaria">#35BEB2</color>
-    <color name="corPrimariaEscura">#D81B60</color>
+
+    <color name="corPrimaria">#003E7A</color>
+    <color name="corPrimariaEscura">#003E7A</color>
     <color name="corAcentuada">#D81B60</color>
 </resources>
